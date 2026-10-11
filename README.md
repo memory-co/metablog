@@ -8,7 +8,7 @@ metablog 有三层内容，全部住在一个**分层 git 仓库**里，没有�
 - **post** —— 博文，主形态。`<标题>.post/` 一个目录：`readme.md`（frontmatter + 正文）、`assets/`、`afterwords/`（回看时追加的后记，只增不改）。
 - **insight** —— 元认知条目。`<条目>.insight/readme.md`，从几篇博文里提炼出来，像维基词条，可改可删。
 
-目录树按主题组织，目录就是博客的分类 / 系列；三层的对象并排放。设计见 [`docs/designs/v1/`](docs/designs/v1/README.md)；数据结构 [`docs/structure/v1/`](docs/structure/v1/README.md)；HTTP API [`docs/api/v1/`](docs/api/v1/README.md)；CLI [`docs/cli/v1/`](docs/cli/v1/README.md)。
+目录树按主题组织，目录就是博客的分类 / 系列；三层的对象并排放。文档从 [`docs/README.md`](docs/README.md) 开始：设计（为什么）在 [`docs/designs/v1/`](docs/designs/v1/README.md)，数据结构（是什么）在 [`docs/structure/v1/`](docs/structure/v1/README.md)。
 
 ## 安装
 
@@ -59,6 +59,6 @@ metablog/                ← Python 包（pip: metablog；命令 metablog）
 │   └── providers/       ← 存储介质：本地文件系统 + git
 └── frontend/            ← Vite + React（读、写、条目浏览）
 tests/                   ← 按场景组织
-docs/                    ← designs / structure / api / cli
+docs/                    ← designs（为什么）/ structure（是什么）
 examples/metas/          ← 一份示例内容，看三层长什么样
 ```

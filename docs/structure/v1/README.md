@@ -2,6 +2,8 @@
 
 v1 的数据模型：对象 schema、字段语义、磁盘布局。**是什么**；为什么见 [`../../designs/v1/`](../../designs/v1/README.md)。
 
+代码仓库布局见 [codebase.md](codebase.md)；磁盘布局见 [filesystem.md](filesystem.md)。
+
 ## 对象清单
 
 | 对象 | 形态 | 存哪 | 文档 |
