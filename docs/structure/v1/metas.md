@@ -1,6 +1,6 @@
 # Metas (v1)
 
-层、对象、字段的完整定义。字段以 [`metablog/backend/services/metas/layers/*.yaml`](../../../metablog/backend/services/metas/layers/README.md) 为准，这里跟着它改；示例见 [`examples/metas/`](../../../examples/metas/)。为什么这么分见 [designs/v1/content.md](../../designs/v1/content.md)。
+层、对象、字段的完整定义。字段以 [`metablog/backend/services/metas/layers/*.yaml`](../../../metablog/backend/services/metas/layers/README.md) 为准，这里跟着它改；示例见 [`examples/metas/`](../../../examples/metas/)。整体定位见 [designs/v1/main.md](../../designs/v1/main.md)；这里还是三层旧模型，等定位定下来再对齐。
 
 ## 层
 
