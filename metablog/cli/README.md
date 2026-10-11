@@ -13,4 +13,4 @@
 | `publish.py` | `metablog publish`：导出静态站 + RSS |
 | `_common.py` | 服务地址、HTTP 客户端、`--json` 输出 |
 
-命令手册见 [`docs/cli/v1/`](../../docs/cli/v1/README.md)。
+命令手册等接口定下来再写；整体设计见 [`docs/designs/v1/main.md`](../../docs/designs/v1/main.md)。

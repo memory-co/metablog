@@ -14,5 +14,6 @@ pytest tests/metas/layer_guard        # 单个场景
 | `insights/` | 条目：`backlinks` |
 | `publish/` | 静态导出：`static_site` |
 | `cli/` | `end_to_end` |
+| `system/` | `boot` |
 
 公共 fixture（`conftest.py`）：`home`（临时 `METABLOG_HOME`）、`client`（直连 ASGI 的 TestClient）、`svc`（`client.app.state`）。
