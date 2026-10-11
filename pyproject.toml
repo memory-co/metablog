@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "metablog"
+version = "0.1.0"
+description = "metablog — 以博客形态存放元认知：origin / post / insight 三层，分层 git 存储"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.7",
+    "pyyaml>=6",
+    "httpx>=0.27",          # CLI 调本地 API
+    "markdown-it-py>=3",    # publish 渲染博文
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[project.scripts]
+metablog = "metablog.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "test.py"]   # 场景住在 tests/<名字>/test.py
+addopts = "--import-mode=importlib"
+
+[tool.hatch.build]
+artifacts = ["metablog/frontend/dist/**"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["metablog"]
+exclude = [
+    "metablog/frontend/src",
+    "metablog/frontend/node_modules",
+    "metablog/frontend/package*.json",
+    "metablog/frontend/*.ts",
+    "metablog/frontend/index.html",
+    "metablog/frontend/README.md",
+]

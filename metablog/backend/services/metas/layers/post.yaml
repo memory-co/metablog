@@ -1,0 +1,28 @@
+layer: post
+description: 博文，元认知的主形态：标题是目录名，正文在 readme.md；图片在 assets/；回看时的后记在 afterwords/，只增不改。修订史在 git。
+object:
+  pattern: ^(?P<name>[^/]+)\.post$
+  name: 标题
+files:
+  - pattern: ^readme\.md$
+    label: 正文
+    required: true
+    format:
+      fields:
+        date: {type: date, required: true, description: "发表日；时间线按它排"}
+        kind: {type: enum, values: [复盘, 方法, 觉察, 提问], description: "元认知的类型"}
+        tags: {type: list, item: {type: string}, description: "横向聚合"}
+        summary: {type: string, description: "一句话；列表页和 RSS 用"}
+        sources: {type: list, item: {type: ref, layer: origin}, description: "基于哪些原始素材"}
+        links: {type: list, item: {type: ref, layer: post}, description: "相关博文"}
+      body: markdown
+    template: "\n## 发生了什么\n\n## 我当时怎么想的\n\n## 现在怎么看\n\n## 下次怎么做\n"
+  - pattern: ^assets/(?P<name>[^/]+)$
+    label: 附件
+    format: binary
+  - pattern: ^afterwords/(?P<name>\d{4}-\d{2}-\d{2})\.md$
+    name: 日期
+    label: 后记
+    append_only: true
+    format:
+      body: markdown

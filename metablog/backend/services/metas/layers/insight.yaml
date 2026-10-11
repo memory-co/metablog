@@ -1,0 +1,15 @@
+layer: insight
+description: 元认知条目：从几篇博文里提炼出的、反复成立的一条认识，像维基词条；标题是目录名。可改、可删，历史在 git。
+object:
+  pattern: ^(?P<name>[^/]+)\.insight$
+  name: 条目
+files:
+  - pattern: ^readme\.md$
+    label: 条目
+    required: true
+    format:
+      fields:
+        context: {type: string, description: "在什么情境下成立"}
+        posts: {type: list, item: {type: ref, layer: post}, description: "出自哪些博文（条目记博文，博文不记条目）"}
+        links: {type: list, item: {type: ref, layer: insight}, description: "相关条目"}
+      body: markdown
